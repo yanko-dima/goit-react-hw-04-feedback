@@ -10,6 +10,7 @@ export class App extends Component {
   };
 
   onClickGood = () => {
+    this.setState(({ good }) => console.log(good + 1));
     console.log('Good');
   };
 
