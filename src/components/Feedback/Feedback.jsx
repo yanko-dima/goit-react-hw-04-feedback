@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types';
-import { Component } from 'react';
 import css from 'components/Feedback/Feedback.module.css';
-import { render } from '@testing-library/react';
 
 const Feedback = ({ onGood, onNeutral, onBad }) => {
   return (
