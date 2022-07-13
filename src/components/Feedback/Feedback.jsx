@@ -1,8 +1,7 @@
-// import { Component } from 'react';
+import PropTypes from 'prop-types';
 
 const Feedback = ({ onGood, onNeutral, onBad }) => {
   return (
-    // <h1> Please leave feedback </h1>
     <div>
       <button type="button" onClick={onGood}>
         Good
@@ -17,34 +16,10 @@ const Feedback = ({ onGood, onNeutral, onBad }) => {
   );
 };
 
-// class Feedback extends Component {
-//   render() {
-//     return (
-//       // <h1>Please leave feedback</h1>
-
-//       <div>
-//         <button type="button" onClick={this.onClickGood}>
-//           Good
-//         </button>
-//         <button
-//           type="button"
-//           onClick={() => {
-//             console.log('Neutral');
-//           }}
-//         >
-//           Neutral
-//         </button>
-//         <button
-//           type="button"
-//           onClick={() => {
-//             console.log('Bad');
-//           }}
-//         >
-//           Bad
-//         </button>
-//       </div>
-//     );
-//   }
-// }
+Feedback.propTypes = {
+  onGood: PropTypes.func.isRequired,
+  onNeutral: PropTypes.func.isRequired,
+  onBad: PropTypes.func.isRequired,
+};
 
 export default Feedback;

@@ -1,4 +1,4 @@
-// import { Component } from 'react';
+import PropTypes from 'prop-types';
 
 const Statistics = ({ good, neutral, bad }) => {
   return (
@@ -6,20 +6,16 @@ const Statistics = ({ good, neutral, bad }) => {
       <p>Good: {good}</p>
       <p>Neutral: {neutral}</p>
       <p>Bad: {bad}</p>
+      <p>Total: 5</p>
+      <p>Positive feedback: 43%</p>
     </div>
   );
 };
 
-// class Statistics extends Component {
-//   render() {
-//     return (
-//       <div>
-//         <p>Good: 3</p>
-//         <p>Neutral: 2</p>
-//         <p>Bad: 2</p>
-//       </div>
-//     );
-//   }
-// }
+Statistics.propTypes = {
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+};
 
 export default Statistics;
