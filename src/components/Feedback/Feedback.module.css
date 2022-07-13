@@ -1,0 +1,20 @@
+.btn {
+  color: #475a6a;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  border: 0;
+  padding: 5px 15px 5px 15px;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px 2px hsl(0deg 0% 68% / 60%);
+}
+
+.btn:not(:last-child) {
+  margin-right: 12px;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #21b8c5;
+  color: white;
+}

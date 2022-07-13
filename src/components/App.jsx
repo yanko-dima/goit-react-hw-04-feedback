@@ -1,7 +1,8 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
-import Feedback from 'components/Feedback/Feedback';
-import Statistics from 'components/Statistics/Statistics';
+import Feedback from 'components/Feedback';
+import Statistics from 'components/Statistics';
+import 'index.css';
 
 export class App extends Component {
   static propTypes = {
@@ -39,18 +40,23 @@ export class App extends Component {
   };
 
   countTotalFeedback = () => {
-    return this.state.reduce((acc, el) => {
-      acc += el;
-    }, 0);
+    const { good, neutral, bad } = this.state;
+
+    return good + neutral + bad;
   };
 
-  countPositiveFeedbackPercentage = () => {};
+  countPositiveFeedbackPercentage = () => {
+    const { good, neutral, bad } = this.state;
+    const persentage = (good * 100) / (good + neutral + bad);
+
+    return good ? Math.round(persentage) : 0;
+  };
 
   render() {
     const { good, neutral, bad } = this.state;
 
     return (
-      <>
+      <section className="section">
         <h1>Please leave feedback</h1>
         <Feedback
           onGood={this.onClickGood}
@@ -62,9 +68,10 @@ export class App extends Component {
           good={good}
           neutral={neutral}
           bad={bad}
-          // total={this.countTotalFeedback}
+          total={this.countTotalFeedback()}
+          positivePercentage={this.countPositiveFeedbackPercentage()}
         />
-      </>
+      </section>
     );
   }
 }

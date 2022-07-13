@@ -1,14 +1,17 @@
 import PropTypes from 'prop-types';
+import css from 'components/Statistics/Statistics.module.css';
 
-const Statistics = ({ good, neutral, bad }) => {
+const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
   return (
-    <div>
-      <p>Good: {good}</p>
-      <p>Neutral: {neutral}</p>
-      <p>Bad: {bad}</p>
-      <p>Total: 5</p>
-      <p>Positive feedback: 43%</p>
-    </div>
+    <ul className={css.statictcs__list}>
+      <li className={css.statictcs__item}>Good: {good}</li>
+      <li className={css.statictcs__item}>Neutral: {neutral}</li>
+      <li className={css.statictcs__item}>Bad: {bad}</li>
+      <li className={css.statictcs__item}>Total: {total}</li>
+      <li className={css.statictcs__item}>
+        Positive feedback: {positivePercentage}%
+      </li>
+    </ul>
   );
 };
 
@@ -16,6 +19,8 @@ Statistics.propTypes = {
   good: PropTypes.number.isRequired,
   neutral: PropTypes.number.isRequired,
   bad: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.number.isRequired,
 };
 
 export default Statistics;

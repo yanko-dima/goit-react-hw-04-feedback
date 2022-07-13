@@ -1,15 +1,18 @@
 import PropTypes from 'prop-types';
+import { Component } from 'react';
+import css from 'components/Feedback/Feedback.module.css';
+import { render } from '@testing-library/react';
 
 const Feedback = ({ onGood, onNeutral, onBad }) => {
   return (
     <div>
-      <button type="button" onClick={onGood}>
+      <button className={css.btn} type="button" onClick={onGood}>
         Good
       </button>
-      <button type="button" onClick={onNeutral}>
+      <button className={css.btn} type="button" onClick={onNeutral}>
         Neutral
       </button>
-      <button type="button" onClick={onBad}>
+      <button className={css.btn} type="button" onClick={onBad}>
         Bad
       </button>
     </div>
