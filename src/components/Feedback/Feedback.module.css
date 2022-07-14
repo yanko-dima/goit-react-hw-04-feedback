@@ -9,12 +9,22 @@
   box-shadow: 0 1px 2px 2px hsl(0deg 0% 68% / 60%);
 }
 
-.btn:not(:last-child) {
-  margin-right: 12px;
-}
-
 .btn:hover,
 .btn:focus {
   background-color: #21b8c5;
   color: white;
+}
+
+.bbn__list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.bbn__item {
+}
+
+.bbn__item:not(:last-child) {
+  margin-right: 12px;
 }
