@@ -13,9 +13,22 @@ export const App = () => {
   const options = { good, neutral, bad };
 
   const onClickBtn = btnId => {
-    btnId === 'good' && setGood(good => good + 1);
-    btnId === 'neutral' && setNeutral(neutral => neutral + 1);
-    btnId === 'bad' && setBad(bad => bad + 1);
+    switch (btnId) {
+      case 'good':
+        setGood(good => good + 1);
+        break;
+      case 'neutral':
+        setNeutral(neutral => neutral + 1);
+        break;
+      case 'bad':
+        setBad(bad => bad + 1);
+        break;
+      default:
+        return;
+    }
+    // btnId === 'good' && setGood(good => good + 1);
+    // btnId === 'neutral' && setNeutral(neutral => neutral + 1);
+    // btnId === 'bad' && setBad(bad => bad + 1);
   };
 
   const countTotalFeedback = () => {
